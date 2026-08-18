@@ -495,6 +495,7 @@ html {
   margin: 0 auto;
 }
 
+
 .about-image {
   flex: 1 1 45%;
 }
@@ -522,8 +523,7 @@ html {
 
 .about-text p {
   font-family: var(--bontle-font-body);
-  font-weight: 400; /* 700 makes body copy feel heavy/shouty at paragraph length — dropped it for readability */
-  line-height: 1.8;
+  font-weight: 400; 
   color: #4a4038;
   font-size: 1rem;
 }
@@ -552,150 +552,190 @@ html {
     font-size: 1.9rem;
   }
 }
-/* ===== Stylists section ===== */
+/* ====STYLIST SECTION====*/
 .stylists {
-  background-color: #ded4c4; /* warmer, slightly deeper cream than .about, to separate the two sections */
-  padding: 100px 60px;
+    background:#ded4c4;
+    padding: 100px 6%;
+    color: #202020;
 }
+/* Heading */
 
 .stylists-heading {
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto 44px;
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
 }
 
 .stylists-heading h2 {
-  font-family: var(--bontle-font-display);
-  font-weight: 700;
-  font-size: 2.6rem;
-  color: var(--bontle-dark);
-  margin-bottom: 16px;
+    margin: 0 0 18px;
+    color: #202020 !important;
+    font-family: var(--bontle-font-display);
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
+    letter-spacing: -2px;
 }
-
 .stylists-heading p {
-  font-family: var(--bontle-font-body);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #5c5045;
+    margin: 0;
+    color: #5c5045;
+    font-family: var(--bontle-font-body);
+    font-size: 15px;
+    line-height: 1.7;
 }
-
-/* ===== Filter pills ===== */
+/* ====FILTER BUTTONS==== */
 .stylist-filters {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
 }
-
 .filter-pill {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--bontle-gold);
-  color: var(--bontle-dark);
-  font-family: var(--bontle-font-body);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    border: 1px solid #cfc6bf;
+    background: transparent;
+    color: #5c5045;
+    padding: 11px 25px;
+    border-radius: 30px;
+    font-family: var(--bontle-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease;
 }
 
 .filter-pill:hover {
-  transform: translateY(-3px);
+    background: radial-gradient(
+  ellipse at 30% 40%,
+  #8F5728 0%,
+  #3D2413 40%,
+  #0D0D0D 80%
+);;
+    border-color: #34231d;
+    color: #e6c99b;
+    transform: translateY(-2px);
 }
-
+/* ACTIVE FILTER */
 .filter-pill.active {
-  background-color: var(--bontle-dark);
-  color: var(--bontle-cream);
+    background: #34231d;
+    border-color: #34231d;
+    color: #e6c99b;
 }
-
-/* ===== Stylist cards ===== */
+/* ===GRID=== */
 .stylist-row {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1250px;
+    margin: 0 auto;
 }
-
+/* ===CARDS==== */
 .stylist-card {
-  border: none;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: var(--bontle-cream);
-  box-shadow: 0 6px 18px rgba(28, 19, 13, 0.08);
-  height: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #e1dbd5;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(52, 35, 29, 0.06);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+.stylist-card:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 18px 40px rgba(52, 35, 29, 0.13);
+}
+/* ===IMAGES=== */
 
 .stylist-card .card-img-top {
-  height: 220px;
-  object-fit: cover;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
-
+.stylist-card:hover .card-img-top {
+    transform: scale(1.04);
+}
+/* ===CARD BODY=== */
 .stylist-card .card-body {
-  padding: 22px 20px 26px;
+    padding: 25px 23px 27px;
+    display: flex;
+    flex-direction: column;
 }
-
 .stylist-card .card-title {
-  font-family: var(--bontle-font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--bontle-dark);
-  margin-bottom: 6px;
+    margin: 0 0 7px;
+    color: #202020;
+    font-family: var(--bontle-font-display);
+    font-size: 20px;
+    font-weight: 700;
 }
-
 .stylist-card .card-category {
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--bontle-gold);
-  margin-bottom: 12px;
+    margin: 0 0 14px;
+    color: #8a654d;
+    font-family: var(--bontle-font-body);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
 }
-
 .stylist-card .card-text {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #6b5f53;
-  margin-bottom: 18px;
-  min-height: 66px;
+    margin-bottom: 23px;
+    color: #5c5045;
+    font-family: var(--bontle-font-body);
+    font-size: 13px;
+    line-height: 1.7;
 }
+/* ===BOOK BUTTON */
 
-.btn-stylist {
-  background-color: var(--bontle-dark);
-  color: var(--bontle-cream);
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.stylist-card .btn-outline-primary {
+    margin-top: auto;
+    width: 100%;
+    padding: 11px 15px;
+    border: 1px solid #8F5728;
+    background: transparent;
+    color: #8F5728;
+    border-radius: 4px;
+    font-family: var(--bontle-font-body);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
+.stylist-card .btn-outline-primary:hover {
+    background: radial-gradient(
+  ellipse at 30% 40%,
+  #8F5728 0%,
+  #3D2413 40%,
+  #0D0D0D 80%
+);;
+    color: #e6c99b;
+   border-color:#8F5728;
+}
+/* ====MOBILE====*/
 
-.btn-stylist:hover {
-  background-color: var(--bontle-gold);
-  color: var(--bontle-dark);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .stylists {
-    padding: 70px 24px;
-  }
-  .filter-pill {
-    width: 70px;
-    height: 70px;
-    font-size: 0.8rem;
-  }
-}
-h2{
-     color: black; 
-     font-family: var(--bontle-font-display); 
-     font-weight: 700;
+@media (max-width: 767px) {
+    .stylists {
+        padding: 70px 5%;
+    }
+    .stylists-heading h2 {
+        font-size: 40px;
+    }
+    .stylist-filters {
+        gap: 8px;
+        margin-bottom: 35px;
+    }
+    .filter-pill {
+        padding: 9px 19px;
+    }
+    .stylist-card .card-img-top {
+        height: 300px;
+    }
 }
 /* FAQ  section */
 
 .FAQ {
-  background-color: var(--bontle-dark);
+  background-color: white;
   padding: 90px 60px;
 }
 
@@ -735,7 +775,7 @@ h2{
 /* ===== Accordion button (question) ===== */
 .FAQ .accordion-button {
   background-color: transparent;
-  color: var(--bontle-cream);
+  color: #000;
   font-family: var(--bontle-font-body);
   font-weight: 500;
   font-size: 1rem;
@@ -746,7 +786,7 @@ h2{
 
 .FAQ .accordion-button:not(.collapsed) {
   background-color: transparent;
-  color: var(--bontle-gold);
+  color: #000000;
   box-shadow: none;
 }
 
@@ -977,8 +1017,7 @@ height: 50vh;
 .btn-book:hover {
   background-color: #b78d54;
 }
-
-/* ===== Responsive ===== */
+/* ===== FORM BOX & APPOINTMT FORM Responsive ===== */
 @media (max-width: 900px) {
   .contact {
     flex-direction: column;
@@ -988,4 +1027,728 @@ height: 50vh;
     grid-template-columns: 1fr;
     gap: 0;
   }
+}
+
+.contact-map {
+    width: 100%;
+    padding: 80px 6%;
+    background: #f1eeeb;
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.map-header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.map-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #77716c;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.map-header h2 {
+    margin: 0 0 8px;
+
+    color: #202020;
+
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.map-header p {
+    margin: 0;
+
+    color: #77716c;
+
+    font-size: 14px;
+}
+
+
+/* Directions button */
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 20px;
+
+    background:#8F5728;
+    color: #e6c99b;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+.directions-btn:hover {
+    background: #202020;
+    transform: translateY(-2px);
+}
+
+
+/* Map */
+
+.map-container {
+    max-width: 1200px;
+    height: 450px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background: #222;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    filter:
+        grayscale(100%)
+        brightness(70%)
+        contrast(120%);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .contact-map {
+        padding: 55px 6%;
+    }
+
+    .map-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .map-header h2 {
+        font-size: 27px;
+    }
+    .map-container {
+        height: 350px;
+    }
+}
+
+/* BONTLE BEAUTY LOUNGE FOOTER*/
+
+.footer {
+    background: #f1eeeb;
+    color: #202020;
+    padding: 64px 6% 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* TOP SECTION */
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+/* BRAND */
+.brand-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+/* Main slogan */
+.footer-brand h2 {
+    margin: 68px 0 64px;
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 0.98;
+    letter-spacing: -2.5px;
+    font-weight: 600;
+}
+
+/* SOCIAL MEDIA*/
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 15px;
+    background: #ffffff;
+    color: #242424;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background: #8F5728;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Social icons */
+.facebook-icon {
+    font-weight: bold;
+    font-size: 17px;
+}
+.twitter-icon {
+    font-size: 14px;
+}
+.youtube-icon {
+    font-size: 11px;
+}
+
+/* FOOTER COLUMNS */
+.footer-column {
+    border-left: 1px solid #ddd8d3;
+    padding-left: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-column h4 {
+    margin: 5px 0 28px;
+    color: #77716c;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-column a,
+.footer-column p {
+    margin: 0 0 18px;
+    color: #202020;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/*CONTACT*/
+.contact-column p {
+    margin-bottom: 8px;
+}
+
+/* BOTTOM BAR*/
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 28px;
+    border-top: 1px solid #ddd8d3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #65605c;
+    font-size: 11px;
+}
+
+
+/* RESPONSIVE*/
+
+@media (max-width: 800px) {
+
+    .footer {
+        padding: 50px 7% 25px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-bottom: 50px;
+    }
+
+    .footer-brand h2 {
+        margin: 45px 0 40px;
+        font-size: 42px;
+    }
+
+    .footer-column {
+        border-left: none;
+        border-top: 1px solid #ddd8d3;
+        padding: 30px 0 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.footer-logo {
+ width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #34231d;
+    border-radius: 50%;
+}
+/* ===BONTLE BEAUTY LOUNGE GALLERY PAGE===*/
+
+.gallery-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 7%;
+    background:
+     radial-gradient(
+  ellipse at 30% 40%,
+  #8F5728 0%,
+  #4F2F18 45%,
+  #1A1410 80%
+);
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--bontle-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gallery-hero h1 {
+    margin: 0 0 25px;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+    font-weight: 700;
+}
+
+.gallery-hero p {
+    max-width: 520px;
+    margin-bottom: 35px;
+    color: #eee7e0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ====SERVICE GALLERY==== */
+.service-gallery {
+    overflow: hidden;
+    padding: 110px 0;
+    background: var(--bontle-cream);
+}
+.service-gallery:nth-of-type(odd) {
+    background: #ebe6e1;
+}
+
+.service-heading {
+    max-width: 1200px;
+    margin: 0 auto 55px;
+    padding: 0 6%;
+    display: flex;
+    gap: 30px;
+}
+
+.service-number {
+    color: #8F5728;
+    font-size: 18px;
+    font-weight: 700;
+}
+.service-label {
+    display: block;
+    margin-bottom: 10px;
+    color:#8F5728;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.service-heading h2 {
+    margin: 0 0 15px;
+    color: #8F5728;
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+}
+.service-heading p {
+    max-width: 550px;
+    margin: 0;
+    color:#000000;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ====INFINITE MARQUE===*/
+.marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-track {
+    width: max-content;
+    display: flex;
+    gap: 18px;
+    animation:
+        gallery-scroll 45s linear infinite;
+}
+
+/* Second direction */
+.marquee-track.reverse {
+    animation:
+        gallery-scroll-reverse 45s linear infinite;
+}
+/* Pause when user hovers */
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+.gallery-image {
+    flex-shrink: 0;
+    width: 360px;
+    height: 460px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ddd;
+}
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.gallery-image:hover img {
+    transform: scale(1.06);
+}
+
+/* ===MARQUEE ANIMATION==== */
+
+@keyframes gallery-scroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+@keyframes gallery-scroll-reverse {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+/*  TEAM SECTION */
+.team-section {
+    padding: 120px 6%;
+    background: #ffffff;
+}
+.team-heading {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+.team-heading h2 {
+    margin: 0 0 18px;
+    color: #8F5728;
+    font-size: clamp(45px, 6vw, 70px);
+    letter-spacing: -3px;
+    line-height: 1;
+}
+.team-heading p {
+    margin: 0;
+    color: #8F5728;
+    line-height: 1.7;
+}
+.team-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 25px;
+}
+.team-card {
+    overflow: hidden;
+    border: 1px solid var(--bontle-border);
+    background: #ffffff;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.team-card:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 18px 40px rgba(52, 35, 29, 0.12);
+}
+.team-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: var(--bontle-cream);
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.05);
+}
+/* Owner badge */
+.owner-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 12px;
+    background: var(--bontle-brown);
+    color: var(--bontle-gold);
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+   letter-spacing: 1px;
+}
+   /*TEAM INFO*/
+
+.team-info {
+    padding: 23px;
+}
+.team-info h3 {
+    margin: 0 0 6px;
+    color: #8F5728;
+    font-size: 20px;
+    font-weight: 700;
+}
+.team-info span {
+    display: block;
+    margin-bottom: 14px;
+    color: #b06629;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-info p {
+    margin: 0;
+    color: #8F5728;
+    font-size: 13px;
+    line-height: 1.7;
+}
+@media (max-width: 1000px) {
+    .team-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .gallery-hero {
+        min-height: 70vh;
+        padding: 80px 7%;
+    }
+    .gallery-hero h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+          }
+    .service-gallery {
+        padding: 75px 0;
+    }
+    .service-heading {
+        padding: 0 7%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .gallery-image {
+        width: 260px;
+        height: 350px;
+    }
+    .team-section {
+        padding: 80px 6%;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-image {
+        height: 400px;
+    }
+}
+
+.team-section {
+    overflow: hidden;
+    padding: 120px 0;
+    background: #ffffff;
+}
+/* Heading */
+.team-heading {
+    max-width: 700px;
+    margin: 0 auto 65px;
+    padding: 0 6%;
+    text-align: center;
+}
+.team-heading h2 {
+    margin: 0 0 18px;
+    color: #202020;
+    font-family: var(--bontle-font-display);
+    font-size: clamp(45px, 6vw, 70px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+.team-heading p {
+    margin: 0;
+    color: #5c5045;
+    font-family: var(--bontle-font-body);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ====TEAM MARQUEE=====*/
+.team-marquee {
+    width: 100%;
+    overflow: hidden;
+}
+
+.team-track {
+    width: max-content;
+    display: flex;
+    gap: 20px;
+    animation:
+        team-scroll 55s linear infinite;
+}
+/* Pause when mouse is over carousel */
+.team-marquee:hover .team-track {
+    animation-play-state: paused;
+}
+.team-card {
+    flex-shrink: 0;
+    width: 280px;
+    overflow: hidden;
+    border: 1px solid #ddd8d3;
+    border-radius: 6px;
+    background: #f1eeeb;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.team-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(52, 35, 29, 0.14);
+}
+
+.team-image {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+    background: #e5dfda;
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.team-card:hover .team-image img {
+    transform: scale(1.05);
+}
+/* ====OWNER TAG===== */
+.owner-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #34231d;
+    color: #e6c99b;
+    font-family: var(--bontle-font-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+/* ====TEAM NAME===== */
+.team-info {
+    padding: 20px 22px;
+}
+.team-info h3 {
+    margin: 0;
+    color: #202020;
+    font-family: var(--bontle-font-display);
+    font-size: 20px;
+    font-weight: 700;
+}
+/* ====INFINITE TEAM ANIMATION===== */
+@keyframes team-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+/* MOBILE*/
+@media (max-width: 700px) {
+    .team-section {
+        padding: 80px 0;
+    }
+    .team-heading {
+        margin-bottom: 45px;
+    }
+    .team-card {
+        width: 240px;
+    }
+    .team-image {
+        height: 320px;
+    }
 }

@@ -40,12 +40,15 @@
             <li class="nav-item">
             <a class="nav-link" href="Contact.html">Contact</a>
           </li>
-          <li> <button class="btn btn-outline-primary" href="contact.html">Book an Appointment</button></li>
+         <li>
+    <a href="contact.html" class="btn btn-outline-primary">Book an Appointment</a>
+</li>
           </ul>
         </div>
       </div>
     </nav>
      <body class="p-3 m-0 border-0 bd-example m-0 border-0"></body>
+
     <section class="hero" id="home-page">
   <div class="hero-content">
     <h5>Welcome to BONTLE BEAUTY LOUNGE</h5>
@@ -73,96 +76,381 @@
 
 <section class="stylists" id="stylists">
   <div class="stylists-heading">
-    <h2 style="color: black; font-family: var(--bontle-font-display); font-weight: 700;">Meet Our Stylists</h2>
-    <p style="color: #5c5045; font-family: var(--bontle-font-body); line-height: 1.7;">Meet the artists behind your next look. Choose your preferred stylist and continue straight into their appointment flow.</p>
+    <h2>Meet Our Stylists</h2>
+    <p>
+      Meet the artists behind your next look. Choose your preferred
+      stylist and continue straight into their appointment flow.
+    </p>
   </div>
-
+  <!-- FILTER BUTTONS -->
   <div class="stylist-filters">
-    <button class="filter-pill active">all</button>
-    <button class="filter-pill">Nails</button>
-    <button class="filter-pill">Facials</button>
-    <button class="filter-pill">Hair</button>
+    <button class="filter-pill active" data-filter="all">
+      All
+    </button>
+    <button class="filter-pill" data-filter="hair">
+      Hair
+    </button>
+    <button class="filter-pill" data-filter="facials">
+      Facials
+    </button>
+    <button class="filter-pill" data-filter="nails">
+      Nails
+    </button>
   </div>
-
+  <!-- STYLIST GRID -->
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 stylist-row">
-
-    <div class="col">
+    <!-- ================= HAIR ================= -->
+    <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/about-img.jpg" class="card-img-top" alt="Naledi Moagi">
+        <img src="images/about-img.jpg"
+             class="card-img-top"
+             alt="Naledi Moagi">
         <div class="card-body">
-          <h5 class="card-title">Naledi Moagi</h5>
-          <p class="card-category">Natural Hair Care</p>
-          <p class="card-text">Gentle, restorative care for healthy curls, coils, treatments and silk-press finishes.</p>
-          <a href="contact.html" class="btn btn-outline-primary">Book with Stylist</a>
+          <h5 class="card-title">
+            Naledi Moagi
+          </h5>
+          <p class="card-category">
+            Natural Hair Care
+          </p>
+          <p class="card-text">
+            Gentle, restorative care for healthy curls, coils,
+            treatments and silk-press finishes.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="hair">
+      <div class="card stylist-card">
+        <img src="images/amara.jpg"
+             class="card-img-top"
+             alt="Amara Ndlovu">
+        <div class="card-body">
+          <h5 class="card-title">
+            Amara Ndlovu
+          </h5>
+          <p class="card-category">
+            Braids &amp; Protective Styles
+          </p>
+          <p class="card-text">
+            Clean parting and beautifully balanced knotless,
+            box and protective braid styles.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="col">
+
+    <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/amara.jpg" class="card-img-top" alt="Amara Ndlovu">
+        <img src="images/zinhle.jpg"
+             class="card-img-top"
+             alt="Zinhle Dube">
         <div class="card-body">
-          <h5 class="card-title">Amara Ndlovu</h5>
-          <p class="card-category">Braids &amp; Related Protective Hairstyles</p>
-          <p class="card-text">Clean parting and beautifully balanced knotless, box and protective braid styles.</p>
-          <a href="contact.html" class="btn btn-outline-primary">Book with Stylist</a>
+          <h5 class="card-title">
+            Zinhle Dube
+          </h5>
+          <p class="card-category">
+            Wig Care &amp; Installation
+          </p>
+          <p class="card-text">
+            Precision installs, custom styling and thoughtful
+            wig maintenance for a seamless finish.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="hair">
+      <div class="card stylist-card">
+        <img src="images/thato.jpg"
+             class="card-img-top"
+             alt="Thato Molefe">
+        <div class="card-body">
+          <h5 class="card-title">
+            Thato Molefe
+          </h5>
+          <p class="card-category">
+            Braids &amp; Locs
+          </p>
+          <p class="card-text">
+            Expressive braid and loc styling, with a focus on
+            natural texture and long-lasting detail.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ================= FACIALS ================= -->
+    <div class="col stylist-item" data-category="facials">
+      <div class="card stylist-card">
+        <img src="images/facial1.jpg"
+             class="card-img-top"
+             alt="Boitumelo Kgosidintsi">
+        <div class="card-body">
+          <h5 class="card-title">
+            Boitumelo Kgosidintsi
+          </h5>
+          <p class="card-category">
+            Skin Treatments
+          </p>
+          <p class="card-text">
+            Personalised facial treatments designed to refresh,
+            restore and reveal healthier-looking skin.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="facials">
+      <div class="card stylist-card">
+        <img src="images/facial2.jpg"
+             class="card-img-top"
+             alt="Keitumetse Motsamai">
+        <div class="card-body">
+          <h5 class="card-title">
+            Keitumetse Motsamai
+          </h5>
+          <p class="card-category">
+            Glow &amp; Hydration
+          </p>
+          <p class="card-text">
+            Hydrating and rejuvenating treatments for a soft,
+            refreshed and naturally radiant complexion.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="facials">
+      <div class="card stylist-card">
+        <img src="images/facial3.jpg"
+             class="card-img-top"
+             alt="Lesego Dintwe">
+        <div class="card-body">
+          <h5 class="card-title">
+            Lesego Dintwe
+          </h5>
+          <p class="card-category">
+            Acne &amp; Skin Care
+          </p>
+          <p class="card-text">
+            Targeted skincare sessions focused on clearer,
+            balanced and healthier-looking skin.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="facials">
+      <div class="card stylist-card">
+        <img src="images/facial4.jpg"
+             class="card-img-top"
+             alt="Mpho Ramasu">
+        <div class="card-body">
+          <h5 class="card-title">
+            Mpho Ramasu
+          </h5>
+          <p class="card-category">
+            Luxury Facials
+          </p>
+          <p class="card-text">
+            Relaxing luxury facials combining deep cleansing,
+            massage and nourishing skincare.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="col">
+    <!-- ================= NAILS ================= -->
+    <div class="col stylist-item" data-category="nails">
       <div class="card stylist-card">
-        <img src="images/zinhle.jpg" class="card-img-top" alt="Zinhle Dube">
+        <img src="images/nails1.jpg"
+             class="card-img-top"
+             alt="Dineo Molebatsi">
         <div class="card-body">
-          <h5 class="card-title">Zinhle Dube</h5>
-          <p class="card-category">Wig Care &amp; Installation</p>
-          <p class="card-text">Precision installs, custom styling and thoughtful wig maintenance for a seamless finish.</p>
-          <a href="contact.html" class="btn btn-outline-primary">Book with Stylist</a>
+          <h5 class="card-title">
+            Dineo Molebatsi
+          </h5>
+          <p class="card-category">
+            Gel Nails
+          </p>
+          <p class="card-text">
+            Clean, polished gel manicures with beautiful finishes
+            designed to complement your personal style.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="col stylist-item" data-category="nails">
+      <div class="card stylist-card">
+
+        <img src="images/nails2.jpg"
+             class="card-img-top"
+             alt="Olebile Segokgo">
+        <div class="card-body">
+          <h5 class="card-title">
+            Olebile Segokgo
+          </h5>
+          <p class="card-category">
+            Nail Art
+          </p>
+          <p class="card-text">
+            Creative nail art, detailed designs and personalised
+            finishes for every occasion.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="col">
+
+    <div class="col stylist-item" data-category="nails">
       <div class="card stylist-card">
-        <img src="images/thato.jpg" class="card-img-top" alt="Thato Molefe">
+        <img src="images/nails3.jpg"
+             class="card-img-top"
+             alt="Tshegofatso Kelebeng">
         <div class="card-body">
-          <h5 class="card-title">Thato Molefe</h5>
-          <p class="card-category">Braids &amp; Locs</p>
-          <p class="card-text">Expressive braid and loc styling, with a focus on natural texture and long-lasting detail.</p>
-          <a href="contact.html" class="btn btn-outline-primary">Book with Stylist</a>
+          <h5 class="card-title">
+            Tshegofatso Kelebeng
+          </h5>
+          <p class="card-category">
+            Acrylic Nails
+          </p>
+          <p class="card-text">
+            Sculpted acrylic sets with precise shaping,
+            durable finishes and elegant detailing.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
         </div>
       </div>
     </div>
 
+    <div class="col stylist-item" data-category="nails">
+      <div class="card stylist-card">
+        <img src="images/nails4.jpg"
+             class="card-img-top"
+             alt="Boitumelo Pheko">
+        <div class="card-body">
+          <h5 class="card-title">
+            Boitumelo Pheko
+          </h5>
+          <p class="card-category">
+            Manicure &amp; Nail Care
+          </p>
+          <p class="card-text">
+            Gentle nail care, classic manicures and beautifully
+            finished natural nail treatments.
+          </p>
+          <a href="contact.html"
+             class="btn btn-outline-primary">
+            Book with Stylist
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
-  <script>
-    // stylist-filter.js
-document.addEventListener('DOMContentLoaded', () => {
-  const pills = document.querySelectorAll('.filter-pill');
-  const cards = document.querySelectorAll('.stylist-row .col');
+<!----STYLISTJAVASCRIPT --->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const filter = pill.dataset.filter;
+    const filterButtons =
+        document.querySelectorAll(".filter-pill");
 
-      // toggle active state on pills
-      pills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
+    const stylistCards =
+        document.querySelectorAll(".stylist-item");
 
-      // show/hide cards
-      cards.forEach(card => {
-        const category = card.dataset.category;
-        const matches = filter === 'all' || category === filter;
-        card.style.display = matches ? '' : 'none';
-      });
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            // Get selected category
+            const selectedFilter =
+                this.getAttribute("data-filter");
+
+
+            // Change active button
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+
+            // Filter stylists
+            stylistCards.forEach(function (card) {
+
+                const category =
+                    card.getAttribute("data-category");
+
+
+                if (
+                    selectedFilter === "all" ||
+                    category === selectedFilter
+                ) {
+
+                    card.style.display = "";
+
+                    // Small animation
+                    setTimeout(function () {
+                        card.classList.add("show");
+                    }, 10);
+
+                } else {
+
+                    card.classList.remove("show");
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
     });
-  });
-});
-  </script>
-  </section>
-</div>
 
+});
+
+</script>
+</div>
+</section>
 <section class="FAQ" id="FAQ">
   <h2 style="color:  #b78d54;">Frequently Asked Questions</h2>
   <p>Find answers to common questions about Bontle Beauty Lounge.</p>
@@ -250,6 +538,67 @@ document.addEventListener('DOMContentLoaded', () => {
   <p style="color: #5c5045; font-family: var(--bontle-font-body); line-height: 1.7;">Book your appointment with Bontle beauty Lounge today!</p>
   <a href="Contact.html" class="btn btn-outline-primary">Book an appointment <i class="fa-solid fa-arrow-right-long"></i></a>
 </section>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="brand-heading">
+                <div class="footer-logo">
+                   <img src="images/bt-logo.png" href="index.html" alt="Bontle Beauty Lounge Logo" class="footer-logo">
+                </div>
+
+                <span>BONTLE BEAUTY LOUNGE</span>
+            </div>
+
+            <h2>
+                Crafting your kind of<br>
+                beautiful
+            </h2>
+
+            <!-- Social Media -->
+            <div class="social-links">
+                <a href="#" class="social-btn">
+                    <span class="facebook-icon">f</span>
+                    Facebook
+                </a>
+
+                <a href="#" class="social-btn">
+                    <span class="twitter-icon">𝕏</span>
+                    Twitter
+                </a>
+
+                <a href="#" class="social-btn">
+                    <span class="youtube-icon">▶</span>
+                    Youtube
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4>Essential Pages</h4>
+
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="hair.html">Hair</a>
+            <a href="nails.html">Nails</a>
+            <a href="facials.html">Facials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column contact-column">
+            <h4>Visit &amp; contact bontle beauty lounge</h4>
+
+            <p>Extension 9, Gaborone</p>
+            <a href="tel:+26771234567">+267 71 234 567</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Bontle Beauty. All rights reserved.</p>
+        <p> Developed by TWS Foundry.</p>
+    </div>
+</footer>
+
 <script src="stylist-filter.js"></script> 
   </body>
 </html>
