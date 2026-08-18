@@ -1,4 +1,4 @@
--- Stylists table
+  -- Stylists table
 CREATE TABLE IF NOT EXISTS stylists (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
