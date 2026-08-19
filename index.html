@@ -24,24 +24,24 @@
             </li>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="Gallery.html">Gallery</a>
+          <a class="nav-link" href="gallery.html">Gallery</a>
         </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="Hair.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="hair.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                services
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Hair.html">Hair</a></li>
-                <li><a class="dropdown-item" href="Nails.html">Nails</a></li>
+                <li><a class="dropdown-item" href="hair.html">Hair</a></li>
+                <li><a class="dropdown-item" href="nails.html">Nails</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="Facials.html">Facials</a></li>
+                <li><a class="dropdown-item" href="facials.html">Facials</a></li>
               </ul>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="Contact.html">Contact</a>
           </li>
          <li>
-    <a href="contact.html" class="btn btn-outline-primary">Book an Appointment</a>
+    <a href="Contact.html" class="btn btn-outline-primary">Book an Appointment</a>
 </li>
           </ul>
         </div>
@@ -83,10 +83,6 @@
     </p>
   </div>
   <!-- FILTER BUTTONS -->
-  <div class="stylist-filters">
-    <button class="filter-pill active" data-filter="all">
-      All
-    </button>
     <button class="filter-pill" data-filter="hair">
       Hair
     </button>
@@ -102,7 +98,7 @@
     <!-- ================= HAIR ================= -->
     <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/about-img.jpg"
+        <img src="images/stylists/naledi.png"
              class="card-img-top"
              alt="Naledi Moagi">
         <div class="card-body">
@@ -125,7 +121,7 @@
     </div>
     <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/amara.jpg"
+        <img src="images/stylists/amara.png"
              class="card-img-top"
              alt="Amara Ndlovu">
         <div class="card-body">
@@ -150,7 +146,7 @@
 
     <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/zinhle.jpg"
+        <img src="images/stylists/zinhle.png"
              class="card-img-top"
              alt="Zinhle Dube">
         <div class="card-body">
@@ -173,7 +169,7 @@
     </div>
     <div class="col stylist-item" data-category="hair">
       <div class="card stylist-card">
-        <img src="images/thato.jpg"
+        <img src="images/stylists/thato.png"
              class="card-img-top"
              alt="Thato Molefe">
         <div class="card-body">
@@ -197,7 +193,7 @@
     <!-- ================= FACIALS ================= -->
     <div class="col stylist-item" data-category="facials">
       <div class="card stylist-card">
-        <img src="images/facial1.jpg"
+        <img src="images/stylists/boitumelo.png"
              class="card-img-top"
              alt="Boitumelo Kgosidintsi">
         <div class="card-body">
@@ -397,16 +393,40 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".stylist-item");
 
 
+    /* =========================================
+       SHOW HAIR BY DEFAULT
+    ========================================== */
+
+    stylistCards.forEach(function (card) {
+
+        const category =
+            card.getAttribute("data-category");
+
+        if (category === "hair") {
+            card.style.display = "";
+            card.classList.add("show");
+        } else {
+            card.style.display = "none";
+            card.classList.remove("show");
+        }
+
+    });
+
+
+    /* =========================================
+       FILTER BUTTONS
+    ========================================== */
+
     filterButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-            // Get selected category
             const selectedFilter =
                 this.getAttribute("data-filter");
 
 
-            // Change active button
+            /* Change active button */
+
             filterButtons.forEach(function (btn) {
                 btn.classList.remove("active");
             });
@@ -414,21 +434,18 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
 
 
-            // Filter stylists
+            /* Filter stylist cards */
+
             stylistCards.forEach(function (card) {
 
                 const category =
                     card.getAttribute("data-category");
 
 
-                if (
-                    selectedFilter === "all" ||
-                    category === selectedFilter
-                ) {
+                if (category === selectedFilter) {
 
                     card.style.display = "";
 
-                    // Small animation
                     setTimeout(function () {
                         card.classList.add("show");
                     }, 10);
@@ -436,6 +453,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
 
                     card.classList.remove("show");
+
                     card.style.display = "none";
 
                 }
@@ -447,7 +465,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
 </script>
 </div>
 </section>

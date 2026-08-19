@@ -1752,3 +1752,895 @@ height: 50vh;
         height: 320px;
     }
 }
+/* =========================================================
+   BONTLE SERVICE PAGES
+========================================================= */
+
+:root {
+    --bontle-cream: #f1eeeb;
+    --bontle-brown: #34231d;
+    --bontle-dark: #202020;
+    --bontle-text: #5c5045;
+    --bontle-muted: #77716c;
+    --bontle-gold: #e6c99b;
+    --bontle-border: #ddd8d3;
+}
+
+/* =========================================================
+   SERVICE PRICES
+========================================================= */
+
+.service-price {
+    margin: 18px 0 20px;
+
+    color: #34231d;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+.service-price::before {
+    content: "";
+}
+
+
+/* Book button */
+
+.service-option-content a {
+    display: inline-block;
+
+    color: #34231d;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #b49a73;
+
+    padding-bottom: 4px;
+
+    transition: all .25s ease;
+}
+
+
+.service-option-content a:hover {
+    color: #8a654d;
+
+    border-color: #34231d;
+}
+
+/* =========================================================
+   BONTLE SERVICE PAGE
+   Scoped classes so they do not interfere with
+   navbar, footer, gallery or other pages.
+========================================================= */
+
+.bontle-service-page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    color: #202020;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.bontle-service-page .bsl-intro {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    padding: 110px 6% 90px;
+
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 35px;
+}
+
+
+.bontle-service-page .bsl-intro-number {
+    padding-top: 8px;
+
+    color: #b49a73;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.bontle-service-page .bsl-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #77716c;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.bontle-service-page .bsl-intro h1 {
+    margin: 0 0 25px;
+
+    color: #202020;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: .92;
+
+    letter-spacing: -4px;
+}
+
+
+.bontle-service-page .bsl-intro p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #5c5045;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.bontle-service-page .bsl-services {
+    padding: 100px 6%;
+
+    background: #f1eeeb;
+}
+
+
+.bontle-service-page .bsl-section-heading {
+    max-width: 1150px;
+
+    margin: 0 auto 50px;
+}
+
+
+.bontle-service-page .bsl-section-heading > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #77716c;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.bontle-service-page .bsl-section-heading h2 {
+    margin: 0 0 15px;
+
+    color: #202020;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+}
+
+
+.bontle-service-page .bsl-section-heading p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: #5c5045;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ACCORDION
+========================================================= */
+
+.bontle-service-page .bsl-accordion {
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+.bontle-service-page .bsl-accordion-item {
+    overflow: hidden;
+
+    margin-bottom: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd8d3;
+}
+
+
+.bontle-service-page .bsl-accordion-button {
+    width: 100%;
+
+    min-height: 85px;
+
+    padding: 20px 25px;
+
+    display: grid;
+
+    grid-template-columns: 60px 1fr 35px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #34231d;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.bontle-service-page .bsl-service-number {
+    color: #b49a73;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.bontle-service-page .bsl-service-name {
+    font-family: var(--bontle-font-display);
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.bontle-service-page .bsl-plus {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #b49a73;
+
+    border-radius: 50%;
+
+    color: #34231d;
+
+    font-size: 18px;
+
+    transition: transform .3s ease,
+                background .3s ease;
+}
+
+
+.bontle-service-page
+.bsl-accordion-item.active
+.bsl-plus {
+    transform: rotate(45deg);
+
+    background: #f1eeeb;
+}
+
+
+/* =========================================================
+   ACCORDION CONTENT
+========================================================= */
+
+.bontle-service-page .bsl-accordion-content {
+    display: none;
+
+    padding: 0 25px 30px;
+
+    grid-template-columns: 38% 62%;
+
+    gap: 30px;
+}
+
+
+.bontle-service-page
+.bsl-accordion-item.active
+.bsl-accordion-content {
+    display: grid;
+}
+
+
+.bontle-service-page .bsl-service-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 280px;
+}
+
+
+.bontle-service-page .bsl-service-info p {
+    margin: 0;
+
+    color: #5c5045;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.bontle-service-page .bsl-service-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.bontle-service-page .bsl-service-bottom strong {
+    color: #34231d;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: 26px;
+}
+
+
+.bontle-service-page .bsl-service-bottom a {
+    display: inline-block;
+
+    padding-bottom: 5px;
+
+    color: #34231d;
+
+    border-bottom: 1px solid #b49a73;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.bontle-service-page .bsl-service-bottom a:hover {
+    color: #8a654d;
+}
+
+
+/* =========================================================
+   SERVICE CAROUSEL
+========================================================= */
+
+.bontle-service-page .bsl-carousel {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 280px;
+
+    background: #e8e3df;
+}
+
+
+.bontle-service-page .bsl-carousel-track {
+    height: 100%;
+
+    display: flex;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+}
+
+
+.bontle-service-page .bsl-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.bontle-service-page .bsl-carousel-track img {
+    flex: 0 0 100%;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    scroll-snap-align: start;
+}
+
+
+/* Carousel buttons */
+
+.bontle-service-page .bsl-carousel-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #8F5728;
+
+    color: #34231d;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: .25s ease;
+}
+
+
+.bontle-service-page .bsl-carousel-btn:hover {
+    background: #e6c99b;
+}
+
+
+.bontle-service-page .bsl-prev {
+    left: 12px;
+}
+
+
+.bontle-service-page .bsl-next {
+    right: 12px;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.bontle-service-page .bsl-gallery {
+    padding: 110px 6%;
+
+    background: #ffffff;
+}
+
+
+.bontle-service-page .bsl-gallery-carousel {
+    max-width: 1150px;
+
+    height: 450px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.bontle-service-page .bsl-gallery-track {
+    height: 100%;
+
+    display: flex;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+}
+
+
+.bontle-service-page .bsl-gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.bontle-service-page .bsl-gallery-track img {
+    flex: 0 0 50%;
+
+    width: 50%;
+    height: 100%;
+
+    padding-right: 10px;
+
+    object-fit: cover;
+
+    scroll-snap-align: start;
+}
+
+
+.bontle-service-page .bsl-gallery-prev,
+.bontle-service-page .bsl-gallery-next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .92);
+
+    color: #34231d;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+
+.bontle-service-page .bsl-gallery-prev {
+    left: 15px;
+}
+
+
+.bontle-service-page .bsl-gallery-next {
+    right: 15px;
+}
+
+
+.bontle-service-page
+.bsl-gallery-prev:hover,
+.bontle-service-page
+.bsl-gallery-next:hover {
+    background: #e6c99b;
+}
+
+
+/* =========================================================
+   BOOKING STRIP
+========================================================= */
+
+.bontle-service-page .bsl-booking-strip {
+    padding: 65px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #8F5728;
+
+    color: #ffffff;
+}
+
+
+.bontle-service-page .bsl-booking-strip span {
+    color: #e6c99b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.bontle-service-page .bsl-booking-strip h2 {
+    margin: 10px 0 0;
+
+    color: #ffffff;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: clamp(30px, 4vw, 50px);
+
+    line-height: 1;
+}
+
+
+.bontle-service-page .bsl-booking-strip a {
+    flex-shrink: 0;
+
+    padding: 14px 24px;
+
+    border-radius: 30px;
+
+    background: #e6c99b;
+
+    color: #34231d;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+
+.bontle-service-page .bsl-booking-strip a:hover {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .bontle-service-page
+    .bsl-accordion-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .bontle-service-page
+    .bsl-service-info {
+        min-height: auto;
+
+        gap: 25px;
+    }
+
+
+    .bontle-service-page
+    .bsl-carousel {
+        height: 350px;
+    }
+
+
+    .bontle-service-page
+    .bsl-gallery-track img {
+        flex: 0 0 70%;
+
+        width: 70%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .bontle-service-page
+    .bsl-intro {
+        padding: 75px 6% 65px;
+
+        display: block;
+    }
+
+
+    .bontle-service-page
+    .bsl-intro-number {
+        margin-bottom: 20px;
+    }
+
+
+    .bontle-service-page
+    .bsl-intro h1 {
+        font-size: 48px;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    .bontle-service-page
+    .bsl-intro p {
+        font-size: 14px;
+    }
+
+
+    .bontle-service-page
+    .bsl-services {
+        padding: 70px 5%;
+    }
+
+
+    .bontle-service-page
+    .bsl-section-heading {
+        margin-bottom: 35px;
+    }
+
+
+    .bontle-service-page
+    .bsl-section-heading h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+
+    /* Accordion */
+
+    .bontle-service-page
+    .bsl-accordion-button {
+        min-height: 75px;
+
+        padding: 17px 15px;
+
+        grid-template-columns: 35px 1fr 30px;
+
+        gap: 8px;
+    }
+
+
+    .bontle-service-page
+    .bsl-service-name {
+        font-size: 17px;
+    }
+
+
+    .bontle-service-page
+    .bsl-plus {
+        width: 27px;
+        height: 27px;
+
+        font-size: 16px;
+    }
+
+
+    /* Accordion content */
+
+    .bontle-service-page
+    .bsl-accordion-content {
+        padding: 0 15px 20px;
+
+        display: none;
+    }
+
+
+    .bontle-service-page
+    .bsl-accordion-item.active
+    .bsl-accordion-content {
+        display: block;
+    }
+
+
+    .bontle-service-page
+    .bsl-service-info {
+        margin-bottom: 20px;
+    }
+
+
+    .bontle-service-page
+    .bsl-service-info p {
+        font-size: 13px;
+    }
+
+
+    .bontle-service-page
+    .bsl-service-bottom strong {
+        font-size: 23px;
+    }
+
+
+    /* Mobile carousel */
+
+    .bontle-service-page
+    .bsl-carousel {
+        height: 280px;
+    }
+
+
+    .bontle-service-page
+    .bsl-carousel-btn {
+        width: 34px;
+        height: 34px;
+
+        font-size: 22px;
+    }
+
+
+    /* Gallery */
+
+    .bontle-service-page
+    .bsl-gallery {
+        padding: 75px 5%;
+    }
+
+
+    .bontle-service-page
+    .bsl-gallery-carousel {
+        height: 390px;
+    }
+
+
+    .bontle-service-page
+    .bsl-gallery-track img {
+        flex: 0 0 88%;
+
+        width: 88%;
+
+        padding-right: 8px;
+    }
+
+
+    /* Booking */
+
+    .bontle-service-page
+    .bsl-booking-strip {
+        padding: 55px 7%;
+
+        display: block;
+    }
+
+
+    .bontle-service-page
+    .bsl-booking-strip h2 {
+        margin-bottom: 25px;
+    }
+
+
+    .bontle-service-page
+    .bsl-booking-strip a {
+        display: inline-block;
+    }
+
+}
