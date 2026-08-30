@@ -40,19 +40,24 @@ h5 {
 
 /* ---------- navbar ---------- */
 .navbar {
-   background: radial-gradient(
-  ellipse at 30% 40%,
-  #8F5728 0%,
-  #4F2F18 45%,
-  #1A1410 80%
-);;
-  position: sticky;
-  top: 0;
-  z-index: 1050;
-  padding: 0.8rem 2rem;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    background: radial-gradient(
+        ellipse at 30% 40%,
+        #8F5728 0%,
+        #4F2F18 45%,
+        #1A1410 80%
+    );
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    padding: 0.8rem 2rem;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .navbar .container-fluid {
@@ -186,26 +191,29 @@ h5 {
   box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.25);
 }
 
-/* ---------- hero section ---------- */
+/* ---------- HERO SECTION ---------- */
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 4rem 6rem 5rem 6rem;
-  min-height: 80vh;
+  gap: 3rem;
+
+  padding: 4rem 5rem;
+  min-height: 580px;
+
   background: radial-gradient(
-  ellipse at 30% 40%,
-  #8F5728 0%,
-  #3D2413 40%,
-  #0D0D0D 80%
-);;
+    ellipse at 30% 40%,
+    #8F5728 0%,
+    #3D2413 40%,
+    #0D0D0D 80%
+  );
+
   position: relative;
   overflow: hidden;
-  gap: 2rem;
 }
 
-/* subtle glow behind hero */
+/* Subtle glow */
 .hero::before {
   content: '';
   position: absolute;
@@ -213,51 +221,66 @@ h5 {
   right: -10%;
   width: 60%;
   height: 100%;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.04) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
+/* ---------- HERO CONTENT ---------- */
+
 .hero-content {
-  flex: 1 1 50%;
-  max-width: 620px;
+  flex: 1;
+  max-width: 560px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero-content h5 {
   color: #c9a84c;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-family: var(--bontle-font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   font-weight: 500;
 }
 
 .hero-content h1 {
-  font-size: 3.8rem;
+  font-family: var(--bontle-font-display);
+  font-size: clamp(2.8rem, 4.5vw, 4.5rem);
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 2rem;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
   color: #f5f0eb;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.hero-content h1 span {
-  color: #c9a84c;
+.hero-content p {
+  font-family: var(--bontle-font-body);
+  color: rgba(245, 240, 235, 0.8);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 1.8rem;
 }
+
+/* ---------- BUTTONS ---------- */
 
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: 0.8rem;
 }
 
 .hero-buttons .btn {
-  padding: 0.75rem 2.2rem;
+  padding: 0.7rem 1.7rem;
   border-radius: 60px;
+  font-family: var(--bontle-font-body);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: all 0.25s ease;
@@ -272,10 +295,12 @@ h5 {
 
 .hero-buttons .btn-outline-primary:hover {
   background: #8F5728;
-  color: #0d0d0d;
+  color: #ffffff;
   box-shadow: 0 8px 30px rgba(143, 87, 40, 0.25);
   transform: translateY(-2px);
 }
+
+/* Second button */
 
 .hero-buttons .btn-outline-primary:last-child {
   border-color: rgba(245, 240, 235, 0.3);
@@ -286,59 +311,50 @@ h5 {
   background: rgba(255, 255, 255, 0.06);
   border-color: #c9a84c;
   color: #c9a84c;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* hero image placeholder */
+/* ---------- HERO IMAGE ---------- */
+
 .hero-image {
-  flex: 1 1 35%;
+  flex: 0 1 480px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
   z-index: 2;
 }
 
 .hero-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-  /* if you have a real image, replace the src in HTML */
-  /* for now we show a decorative circle as placeholder */
+  width: 100%;
+  max-width: 440px;
+  height: 440px;
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  filter: drop-shadow(
+    0 20px 40px rgba(0, 0, 0, 0.5)
+  );
 }
 
-/* decorative circle as placeholder for the logo image */
-.hero-image::after {
-  content: '✦';
-  font-size: 10rem;
-  color: rgba(201, 168, 76, 0.08);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
+/* ---------- RESPONSIVE ---------- */
 
-/* if the image has a src, we hide the pseudo */
-.hero-img[src]:not([src="#"]) + .hero-image::after {
-  display: none;
-}
-
-/* ---------- responsive adjustments ---------- */
 @media (max-width: 992px) {
+
   .hero {
-    padding: 3rem 2rem 4rem 2rem;
+    padding: 3.5rem 2rem;
+    min-height: auto;
     flex-direction: column;
     text-align: center;
   }
 
   .hero-content {
-    max-width: 100%;
+    max-width: 650px;
   }
 
-  .hero-content h1 {
-    font-size: 2.8rem;
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-buttons {
@@ -346,10 +362,34 @@ h5 {
   }
 
   .hero-image {
-    flex: 1 1 auto;
     width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .hero-img {
     max-width: 400px;
-    margin-top: 1rem;
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero-img {
+    height: 320px;
+    max-width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
   }
 
   .navbar {
@@ -732,392 +772,321 @@ html {
         height: 300px;
     }
 }
-/* FAQ  section */
-
-.FAQ {
-  background-color: white;
-  padding: 90px 60px;
-}
-
-.FAQ h2 {
-  font-family: var(--bontle-font-display);
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: var(--bontle-cream);
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.FAQ > p {
-  text-align: center;
-  color: #000000;
-  font-family: var(--bontle-font-body);
-  margin-bottom: 50px;
-}
-
-.FAQ .accordion {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ===== Accordion item ===== */
-.FAQ .accordion-item {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(247, 243, 238, 0.15);
-}
-
-.FAQ .accordion-item:first-of-type,
-.FAQ .accordion-item:last-of-type {
-  border-radius: 0;
-}
-
-/* ===== Accordion button (question) ===== */
-.FAQ .accordion-button {
-  background-color: transparent;
-  color: #000;
-  font-family: var(--bontle-font-body);
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 22px 4px;
-  box-shadow: none;
-  border-left: 8px solid  #b78d54;
-}
-
-.FAQ .accordion-button:not(.collapsed) {
-  background-color: transparent;
-  color: #000000;
-  box-shadow: none;
-}
-
-.FAQ .accordion-button:focus {
-  box-shadow: none;
-  border-color: transparent;
-}
-
-/* the little plus/minus arrow icon */
-.FAQ .accordion-button::after {
-  filter: invert(76%) sepia(17%) saturate(482%) hue-rotate(346deg) brightness(92%) contrast(88%);
-}
-
-/* ===== Accordion body (answer) ===== */
-.FAQ .accordion-body {
-  color: #b78d54;
-  font-weight: 700;
-  font-family: var(--bontle-font-body);
-  font-size: 0.92rem;
-  line-height: 1.7;
-  padding: 0 4px 24px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 700px) {
-  .FAQ {
-    padding: 60px 24px;
-  }
-  .FAQ h2 {
-    font-size: 1.9rem;
-  }
-}
-
+/* CTA SECTION */
 .FAQ-contact {
-  background-color:#8F5728;
-  text-align: center;
-  padding: 80px 20px;
+    text-align: center;
+    padding: 80px 20px;
 }
 
 .FAQ-contact h2 {
-  font-family: var(--bontle-font-display);
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--bontle-cream);
-  margin-bottom: 16px;
+    font-family: var(--bontle-font-display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    letter-spacing: -1px;
+    line-height: 1.15;
+    color: #202020;
+    margin-bottom: 15px;
 }
 
 .FAQ-contact p {
-  font-size: 1rem;
-  margin-bottom: 32px;
+    font-family: var(--bontle-font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #202020;
+    margin-bottom: 25px;
 }
 
-.FAQ-contact .btn.btn-outline-primary {
-  background-color: var(--bontle-gold);
-  border: 2px solid #c9a84c;
-  color: var(--bontle-dark);
-  border-radius: 30px;
-  padding: 14px 30px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+/* ========================================
+   HOMEPAGE TYPOGRAPHY UNIFICATION
+   ======================================== */
+
+/* Main section headings */
+.about-text h2,
+.stylists-heading h2,
+.FAQ h2,
+.FAQ-contact h2 {
+    font-family: var(--bontle-font-display);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.15;
 }
 
-.FAQ-contact .btn.btn-outline-primary:hover {
-  background-color: #b78d54;
-  color: var(--bontle-dark);
+/* Section descriptions and body text */
+.about-text p,
+.stylists-heading p,
+.FAQ > p,
+.FAQ .accordion-button,
+.FAQ .accordion-body,
+.FAQ-contact p {
+    font-family: var(--bontle-font-body);
 }
 
-.FAQ-contact .btn i {
-  font-size: 0.85rem;
+/* ABOUT */
+.about-text h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
 }
-/* ===== Contact section ===== */
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* STYLISTS */
+.stylists-heading h2 {
+    font-size: clamp(2.5rem, 5vw, 3.6rem);
+    letter-spacing: -1.5px;
+}
+
+.stylists-heading p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* FAQ */
+.FAQ h2 {
+    font-size: clamp(2.3rem, 4vw, 3.4rem);
+    letter-spacing: -1px;
+}
+
+.FAQ > p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.FAQ .accordion-button {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.FAQ .accordion-body {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+/* CTA */
+.FAQ-contact h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.FAQ-contact p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+ /* ===== CONTACT PAGE ===== */
 .contact-hero {
-height: 50vh;
-    background-image: url("images/contact-hero.jpg");
+    height: 50vh;
+    min-height: 400px;
+
+    background-image:
+        linear-gradient(
+            rgba(52, 35, 29, 0.62),
+            rgba(52, 35, 29, 0.62)
+        ),
+        url("images/contact-hero.png");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color:#ebe8e6;
+
+    color: #f5f0eb;
+    position: relative;
 }
 
-.contact-details{
-    flex: 1 1 55%;
-}
-.form-group{
-    background-color: #000000;
-}
-/* ===== Contact section ===== */
-.contact {
-  display: flex;
-  gap: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 90px 60px;
-  align-items: flex-start;
+/* Hero heading */
+.contact-hero h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #f5f0eb;
+    font-family: var(--bontle-font-display);
+    font-size: 2.7rem;;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.45);
 }
 
-/* ===== Left column: details ===== */
+/* =================================================
+   CONTACT SECTION
+   ================================================= */
+
+.contact-with-map {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 90px 7%;
+
+    background-color: #ffffff;
+}
+
+
+/* ===== Contact Details ===== */
+
 .contact-details {
-  flex: 1 1 45%;
+    flex: 1 1 45%;
+    min-width: 0;
 }
 
 .contact-details h2 {
-  font-family: var(--bontle-font-display);
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--bontle-dark);
-  margin-bottom: 20px;
+    font-family: var(--bontle-font-display);
+    font-weight: 700;
+    font-size: 2.5rem;
+
+    color: #3A2A20;
+
+    margin-bottom: 12px;
 }
 
 .contact-details > p {
-  color: #6b5f53;
-  font-family: var(--bontle-font-body);
-  line-height: 1.7;
-  margin-bottom: 36px;
+    color: #6b5f53;
+    font-family: var(--bontle-font-body);
+    line-height: 1.7;
+
+    margin-bottom: 35px;
 }
 
+
+/* ===== Individual Contact Items ===== */
+
 .contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 22px 0;
-  border-bottom: 1px solid #e4dcd0;
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #e4dcd0;
 }
 
 .contact-item i {
-  font-size: 1.1rem;
-  color: #000;
-  margin-top: 3px;
+    font-size: 1.1rem;
+    color: #8F5728;
+    margin-top: 3px;
 }
 
 .contact-item strong {
-  display: block;
-  font-family: var(--bontle-font-body);
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 4px;
+    display: block;
+
+    font-family: var(--bontle-font-body);
+    font-weight: 600;
+
+    color: #3A2A20;
+
+    margin-bottom: 4px;
 }
 
 .contact-item span {
-  color: #6b5f53;
-  font-size: 0.92rem;
+    color: #6b5f53;
+    font-size: 0.92rem;
 }
 
-/* ===== Right column: form card ===== */
-.contact-form {
-  flex: 1 1 55%;
-  background-color: #000000;
-  border-radius: 10px;
-  padding: 36px;
-}
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-family: var(--bontle-font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--bontle-cream);
-  margin-bottom: 8px;
-}
-
-.contact-form .form-control {
-  width: 100%;
-  background-color: rgb(78, 77, 77);
-  border: 1px solid #423528;
-  border-radius: 6px;
-  padding: 12px 14px;
-  color: var(--bontle-cream);
-  font-family: var(--bontle-font-body);
-  font-size: 0.9rem;
-}
-
-.contact-form .form-control::placeholder {
-  color: #8a7c6d;
-}
-
-.contact-form textarea.form-control {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-form .form-control:focus {
-  outline: none;
-  border-color: var(--bontle-gold);
-  background-color: #1b1613;
-  color: var(--bontle-cream);
-}
-/* select dropdown arrow needs to be visible on a dark field */
-.contact-form select.form-control {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a06a' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-}
-
-.btn-book {
-  width: 100%;
-  background-color: var(--bontle-gold);
-  border: 2px solid #b78d54;
-  color: var(--bontle-dark);
-  border-radius: 30px;
-  padding: 16px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-.btn-book:hover {
-  background-color: #b78d54;
-}
-/* ===== FORM BOX & APPOINTMT FORM Responsive ===== */
-@media (max-width: 900px) {
-  .contact {
-    flex-direction: column;
-    padding: 60px 24px;
-  }
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-}
+/* =================================================
+   MAP
+   ================================================= */
 
 .contact-map {
+    flex: 1 1 55%;
+
     width: 100%;
-    padding: 80px 6%;
-    background: #f1eeeb;
+    max-width: none;
+
+    padding: 0;
+
+    background: transparent;
+
     box-sizing: border-box;
 }
 
 
-/* Header */
+/* ===== Map Header ===== */
 
 .map-header {
-    max-width: 1200px;
-    margin: 0 auto 30px;
+    width: 100%;
+
+    margin-bottom: 20px;
 
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 30px;
+
+    gap: 25px;
 }
 
 .map-label {
     display: block;
 
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 
-    color: #77716c;
+    color: #8F5728;
 
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
+
     letter-spacing: 1.5px;
 }
 
 .map-header h2 {
-    margin: 0 0 8px;
-
-    color: #202020;
-
-    font-size: 32px;
+    margin: 0 0 5px;
+    color: #3A2A20;
+    font-family: var(--bontle-font-display);
+    font-size: 26px;
     font-weight: 600;
-    letter-spacing: -1px;
 }
 
 .map-header p {
     margin: 0;
-
     color: #77716c;
-
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
-/* Directions button */
-
+/* ===== Directions Button ===== */
 .directions-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    padding: 13px 20px;
-
-    background:#8F5728;
-    color: #e6c99b;
-
+    padding: 11px 18px;
+    background: #8F5728;
+    color: #ffffff;
     border-radius: 30px;
-
     text-decoration: none;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
+    white-space: nowrap;
     transition: 0.2s ease;
 }
+
 .directions-btn:hover {
-    background: #202020;
+    background: #5A4636;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
 
-/* Map */
+/* ===== Map Container ===== */
 
 .map-container {
-    max-width: 1200px;
-    height: 450px;
-
-    margin: 0 auto;
-
+    width: 100%;
+    height: 330px;
+    margin: 0;
     overflow: hidden;
-
-    border-radius: 5px;
-
+    border-radius: 10px;
     background: #222;
+    box-shadow: 0 8px 25px rgba(58, 42, 32, 0.12);
 }
 
 .map-container iframe {
@@ -1128,88 +1097,141 @@ height: 50vh;
 
     filter:
         grayscale(100%)
-        brightness(70%)
-        contrast(120%);
+        brightness(75%)
+        contrast(115%);
 }
 
 
-/* Mobile */
+/* =================================================
+   TABLET
+   ================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+
+    .contact-with-map {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 55px;
+
+        padding: 70px 6%;
+    }
+
+    .contact-details {
+        width: 100%;
+    }
 
     .contact-map {
-        padding: 55px 6%;
+        width: 100%;
+    }
+
+    .map-container {
+        height: 320px;
+    }
+
+    .contact-details h2 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-with-map {
+        padding: 55px 24px;
+        gap: 45px;
+    }
+
+    .contact-details h2 {
+        font-size: 2rem;
     }
 
     .map-header {
         flex-direction: column;
         align-items: flex-start;
+
+        gap: 15px;
     }
 
-    .map-header h2 {
-        font-size: 27px;
+    .directions-btn {
+        padding: 10px 16px;
     }
+
     .map-container {
-        height: 350px;
+        height: 260px;
     }
 }
 
-/* BONTLE BEAUTY LOUNGE FOOTER*/
+/* ========================================
+   BONTLE BEAUTY LOUNGE — FOOTER
+======================================== */
 
 .footer {
     background: #f1eeeb;
     color: #202020;
-    padding: 64px 6% 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 42px 6% 18px;
+    font-family: var(--bontle-font-body);
 }
 
-
 /* TOP SECTION */
-
 .footer-top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 48px;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding-bottom: 38px;
 }
 
 /* BRAND */
 .brand-heading {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 18px;
+    gap: 10px;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: -0.3px;
+    letter-spacing: 0.04em;
+}
+
+.footer-logo {
+    width: 38px;
+    height: auto;
 }
 
 /* Main slogan */
 .footer-brand h2 {
-    margin: 68px 0 64px;
-    font-size: clamp(38px, 4vw, 56px);
-    line-height: 0.98;
-    letter-spacing: -2.5px;
-    font-weight: 600;
+    margin: 28px 0 30px;
+    font-family: var(--bontle-font-display);
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    font-weight: 700;
+    color:#3A2A20;
 }
 
-/* SOCIAL MEDIA*/
+/* SOCIAL MEDIA */
 .social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
+
 .social-btn {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 10px 15px;
+    gap: 7px;
+    padding: 8px 12px;
     background: #ffffff;
     color: #242424;
-    border-radius: 6px;
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 13px;
+    font-family: var(--bontle-font-body);
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.2s ease;
 }
@@ -1223,71 +1245,129 @@ height: 50vh;
 /* Social icons */
 .facebook-icon {
     font-weight: bold;
-    font-size: 17px;
+    font-size: 1rem;
 }
+
 .twitter-icon {
-    font-size: 14px;
+    font-size: 0.9rem;
 }
+
 .youtube-icon {
-    font-size: 11px;
+    font-size: 0.75rem;
 }
 
 /* FOOTER COLUMNS */
 .footer-column {
     border-left: 1px solid #ddd8d3;
-    padding-left: 34px;
+    padding-left: 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 .footer-column h4 {
-    margin: 5px 0 28px;
+    margin: 4px 0 18px;
     color: #77716c;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: var(--bontle-font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.footer-column h2 {
+    margin: 4px 0 18px;
+    color: #77716c;
+    font-family: var(--bontle-font-body);
+    font-size: 0.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .footer-column a,
 .footer-column p {
-    margin: 0 0 18px;
+    margin: 0 0 10px;
     color: #202020;
-    font-size: 14px;
-    line-height: 1.4;
+    font-family: var(--bontle-font-body);
+    font-size: 0.9rem;
+    line-height: 1.5;
     text-decoration: none;
 }
 
 .footer-column a:hover {
-    text-decoration: underline;
+    color: #8F5728;
+    text-decoration: none;
 }
 
-/*CONTACT*/
+/* CONTACT */
 .contact-column p {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-/* BOTTOM BAR*/
+/* BOTTOM BAR */
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 28px;
+    padding-top: 16px;
     border-top: 1px solid #ddd8d3;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .footer-bottom p {
     margin: 0;
     color: #65605c;
-    font-size: 11px;
+    font-family: var(--bontle-font-body);
+    font-size: 0.72rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer {
+        padding: 36px 7% 18px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+
+    .footer-column {
+        border-left: none;
+        border-top: 1px solid #ddd8d3;
+        padding-left: 0;
+        padding-top: 24px;
+    }
+
+    .footer-brand h2 {
+        margin: 22px 0 24px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 }
 
 
+.FAQ-contact h2 {
+    color: #202020;
+    font-family: var(--bontle-font-display);
+}
+
+.FAQ-contact p {
+    color: #202020;
+    font-family: var(--bontle-font-body);
+    line-height: 1.7;
+}
 /* RESPONSIVE*/
 
 @media (max-width: 800px) {
-
     .footer {
         padding: 50px 7% 25px;
     }
@@ -1314,6 +1394,7 @@ height: 50vh;
         align-items: flex-start;
     }
 }
+
 .footer-logo {
  width: 42px;
     height: 42px;
@@ -1323,6 +1404,7 @@ height: 50vh;
     background: #34231d;
     border-radius: 50%;
 }
+
 /* ===BONTLE BEAUTY LOUNGE GALLERY PAGE===*/
 
 .gallery-hero {
@@ -1377,6 +1459,7 @@ height: 50vh;
     padding: 110px 0;
     background: var(--bontle-cream);
 }
+
 .service-gallery:nth-of-type(odd) {
     background: #ebe6e1;
 }
@@ -1394,6 +1477,7 @@ height: 50vh;
     font-size: 18px;
     font-weight: 700;
 }
+
 .service-label {
     display: block;
     margin-bottom: 10px;
@@ -1402,6 +1486,7 @@ height: 50vh;
     font-weight: 700;
     letter-spacing: 2px;
 }
+
 .service-heading h2 {
     margin: 0 0 15px;
     color: #8F5728;
@@ -1409,6 +1494,7 @@ height: 50vh;
     line-height: 0.95;
     letter-spacing: -3px;
 }
+
 .service-heading p {
     max-width: 550px;
     margin: 0;
@@ -1428,7 +1514,7 @@ height: 50vh;
     display: flex;
     gap: 18px;
     animation:
-        gallery-scroll 45s linear infinite;
+    gallery-scroll 45s linear infinite;
 }
 
 /* Second direction */
@@ -1436,10 +1522,12 @@ height: 50vh;
     animation:
         gallery-scroll-reverse 45s linear infinite;
 }
+
 /* Pause when user hovers */
 .marquee:hover .marquee-track {
     animation-play-state: paused;
 }
+
 .gallery-image {
     flex-shrink: 0;
     width: 360px;
@@ -1448,6 +1536,7 @@ height: 50vh;
     border-radius: 5px;
     background: #ddd;
 }
+
 .gallery-image img {
     width: 100%;
     height: 100%;
@@ -1483,6 +1572,7 @@ height: 50vh;
         transform: translateX(0);
     }
 }
+
 /*  TEAM SECTION */
 .team-section {
     padding: 120px 6%;
@@ -1521,11 +1611,13 @@ height: 50vh;
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
+
 .team-card:hover {
     transform: translateY(-7px);
     box-shadow:
         0 18px 40px rgba(52, 35, 29, 0.12);
 }
+
 .team-image {
     position: relative;
     width: 100%;
@@ -1533,6 +1625,7 @@ height: 50vh;
     overflow: hidden;
     background: var(--bontle-cream);
 }
+
 .team-image img {
     width: 100%;
     height: 100%;
@@ -1543,6 +1636,7 @@ height: 50vh;
 .team-card:hover .team-image img {
     transform: scale(1.05);
 }
+
 /* Owner badge */
 .owner-badge {
     position: absolute;
@@ -1583,6 +1677,7 @@ height: 50vh;
     font-size: 13px;
     line-height: 1.7;
 }
+
 @media (max-width: 1000px) {
     .team-grid {
         grid-template-columns:
@@ -1772,13 +1867,9 @@ height: 50vh;
 
 .service-price {
     margin: 18px 0 20px;
-
     color: #34231d;
-
     font-family: var(--bontle-font-display);
-
     font-size: 24px;
-
     font-weight: 700;
 }
 
@@ -1789,36 +1880,25 @@ height: 50vh;
 
 
 /* Book button */
-
 .service-option-content a {
     display: inline-block;
-
     color: #34231d;
-
     font-size: 12px;
-
     font-weight: 700;
-
     text-decoration: none;
-
     border-bottom: 1px solid #b49a73;
-
     padding-bottom: 4px;
-
     transition: all .25s ease;
 }
 
 
 .service-option-content a:hover {
     color: #8a654d;
-
     border-color: #34231d;
 }
 
 /* =========================================================
    BONTLE SERVICE PAGE
-   Scoped classes so they do not interfere with
-   navbar, footer, gallery or other pages.
 ========================================================= */
 
 .bontle-service-page {
@@ -2314,26 +2394,16 @@ height: 50vh;
 .bontle-service-page .bsl-gallery-prev,
 .bontle-service-page .bsl-gallery-next {
     position: absolute;
-
     top: 50%;
-
     transform: translateY(-50%);
-
     width: 45px;
     height: 45px;
-
     border: 0;
-
     border-radius: 50%;
-
     background: rgba(255, 255, 255, .92);
-
     color: #34231d;
-
     font-size: 28px;
-
     cursor: pointer;
-
     z-index: 3;
 }
 
@@ -2362,62 +2432,41 @@ height: 50vh;
 
 .bontle-service-page .bsl-booking-strip {
     padding: 65px 7%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
-
     background: #8F5728;
-
     color: #ffffff;
 }
 
 
 .bontle-service-page .bsl-booking-strip span {
     color: #e6c99b;
-
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
 }
 
 
 .bontle-service-page .bsl-booking-strip h2 {
     margin: 10px 0 0;
-
     color: #ffffff;
-
     font-family: var(--bontle-font-display);
-
     font-size: clamp(30px, 4vw, 50px);
-
     line-height: 1;
 }
 
 
 .bontle-service-page .bsl-booking-strip a {
     flex-shrink: 0;
-
     padding: 14px 24px;
-
     border-radius: 30px;
-
     background: #e6c99b;
-
     color: #34231d;
-
     font-size: 12px;
-
     font-weight: 700;
-
     text-decoration: none;
-
     transition: .25s ease;
 }
 
@@ -2432,7 +2481,6 @@ height: 50vh;
 ========================================================= */
 
 @media (max-width: 900px) {
-
     .bontle-service-page
     .bsl-accordion-content {
         grid-template-columns: 1fr;
@@ -2442,7 +2490,6 @@ height: 50vh;
     .bontle-service-page
     .bsl-service-info {
         min-height: auto;
-
         gap: 25px;
     }
 
@@ -2456,7 +2503,6 @@ height: 50vh;
     .bontle-service-page
     .bsl-gallery-track img {
         flex: 0 0 70%;
-
         width: 70%;
     }
 
@@ -2472,7 +2518,6 @@ height: 50vh;
     .bontle-service-page
     .bsl-intro {
         padding: 75px 6% 65px;
-
         display: block;
     }
 
@@ -2486,7 +2531,6 @@ height: 50vh;
     .bontle-service-page
     .bsl-intro h1 {
         font-size: 48px;
-
         letter-spacing: -2.5px;
     }
 
@@ -2620,27 +2664,481 @@ height: 50vh;
 
         padding-right: 8px;
     }
+}
 
 
-    /* Booking */
+    /* =================================================
+   BOOKING PAGE
+   ================================================= */
 
-    .bontle-service-page
-    .bsl-booking-strip {
-        padding: 55px 7%;
+.booking-page {
+    min-height: 100vh;
 
-        display: block;
+    background-color: #FFF9F2;
+
+    padding: 45px 7% 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =================================================
+   BACK BUTTON
+   ================================================= */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 35px;
+
+    color: #5A4636;
+
+    text-decoration: none;
+
+    font-family: var(--bontle-font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.back-button:hover {
+    color: #8F5728;
+}
+
+
+/* =====================================================
+   BOOKING PAGE
+   ===================================================== */
+
+body {
+    margin: 0;
+}
+
+
+/* Page background */
+
+.booking-page {
+    min-height: 100vh !important;
+    background-color: #FFF9F2 !important;
+    padding: 45px 7% 80px;
+    box-sizing: border-box;
+}
+
+
+/* Back button */
+.booking-page .back-button {
+    display: inline-block;
+    margin-bottom: 35px;
+    color: #5A4636 !important;
+    text-decoration: none;
+    font-family: var(--bontle-font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.booking-page .back-button:hover {
+    color: #8F5728 !important;
+}
+
+
+/* Container */
+
+.booking-page .booking-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Heading */
+
+.booking-page .booking-container h1 {
+    text-align: center;
+
+    color: #3A2A20 !important;
+
+    font-family: var(--bontle-font-display);
+
+    font-size: 2.8rem;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+/* Description */
+
+.booking-page .booking-container > p {
+    text-align: center;
+
+    color: #6B5F53 !important;
+
+    font-family: var(--bontle-font-body);
+
+    margin-bottom: 40px;
+}
+
+
+/* Form card */
+
+.booking-page .contact-form {
+    width: 100%;
+
+    background-color: #5A4636 !important;
+
+    padding: 45px;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 12px 35px rgba(58, 42, 32, 0.15);
+}
+
+
+/* Rows */
+
+.booking-page .form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 0;
+}
+
+
+/* Form groups */
+
+.booking-page .form-group {
+    background: transparent !important;
+
+    margin-bottom: 22px;
+}
+
+
+/* Labels */
+
+.booking-page .form-group label {
+    display: block;
+
+    color: #FFF9F2 !important;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+/* Inputs */
+
+.booking-page .form-control {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    background-color: #FFF9F2 !important;
+
+    border: 1px solid #C8B6A6;
+
+    border-radius: 6px;
+
+    color: #3A2A20 !important;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 0.9rem;
+}
+
+
+/* Placeholder */
+
+.booking-page .form-control::placeholder {
+    color: #9A8878 !important;
+}
+
+
+/* Focus */
+
+.booking-page .form-control:focus {
+    background-color: #FFFFFF !important;
+
+    border-color: #B78D54 !important;
+
+    color: #3A2A20 !important;
+
+    outline: none;
+
+    box-shadow: 0 0 0 3px rgba(183, 141, 84, 0.15) !important;
+}
+
+
+/* Select */
+
+.booking-page select.form-control {
+    appearance: auto;
+
+    background-color: #FFF9F2 !important;
+
+    color: #3A2A20 !important;
+}
+
+
+/* Textarea */
+
+.booking-page textarea.form-control {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+/* Button */
+
+.booking-page .btn-book {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 5px;
+
+    background-color: #B78D54 !important;
+
+    border: 2px solid #B78D54 !important;
+
+    border-radius: 30px;
+
+    color: #FFFFFF !important;
+
+    font-family: var(--bontle-font-body);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.booking-page .btn-book:hover {
+    background-color: #9C7545 !important;
+
+    border-color: #9C7545 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .booking-page {
+        padding: 30px 20px 50px;
     }
 
-
-    .bontle-service-page
-    .bsl-booking-strip h2 {
-        margin-bottom: 25px;
+    .booking-page .booking-container h1 {
+        font-size: 2.1rem;
     }
 
+    .booking-page .contact-form {
+        padding: 25px 20px;
+    }
 
-    .bontle-service-page
-    .bsl-booking-strip a {
-        display: inline-block;
+    .booking-page .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+}
+
+/* =========================================================
+   GLOBAL PAGE WIDTH & SPACING
+   Keeps the main sections visually aligned from top to bottom
+========================================================= */
+
+.about-content,
+.stylist-row,
+.FAQ,
+.FAQ-contact {
+    width: 100%;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   BODY / PARAGRAPH TYPOGRAPHY
+   More readable without making the text bold
+========================================================= */
+
+body {
+    font-weight: 400;
+}
+
+p {
+    font-weight: 400;
+    color: #3f3833;
+}
+
+
+/* About text */
+.about-text p {
+    color: #4a4038;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* Stylists description */
+.stylists-heading p {
+    color: #4a4038;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+========================================================= */
+
+.FAQ {
+    background: #f5f0eb;
+    padding: 90px 6%;
+    color: #202020;
+}
+
+
+/* FAQ heading */
+.FAQ > h2 {
+    text-align: center;
+    color: #202020 !important;
+    margin-bottom: 12px;
+}
+
+
+/* FAQ introduction */
+.FAQ > p {
+    text-align: center;
+    color: #4a4038;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0 auto 45px;
+    max-width: 650px;
+}
+
+
+/* Accordion */
+.FAQ .accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid #cfc6bf;
+}
+
+
+/* Individual questions */
+.FAQ .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #cfc6bf;
+}
+
+
+/* Question */
+.FAQ .accordion-button {
+    background: transparent;
+    color: #34231d;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 20px 5px;
+    box-shadow: none;
+}
+
+
+/* Question hover */
+.FAQ .accordion-button:hover {
+    color: #8F5728;
+}
+
+
+/* Question when open */
+.FAQ .accordion-button:not(.collapsed) {
+    background: transparent;
+    color: #8F5728;
+    box-shadow: none;
+}
+
+
+/* Remove Bootstrap blue focus effect */
+.FAQ .accordion-button:focus {
+    box-shadow: none;
+}
+
+
+/* Answer */
+.FAQ .accordion-body {
+    padding: 0 5px 22px;
+    color: #4a4038;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA SPACING
+========================================================= */
+
+.FAQ-contact {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .about,
+    .stylists,
+    .FAQ {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .FAQ {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .FAQ .accordion-button {
+        padding: 17px 3px;
+        font-size: 0.95rem;
+    }
+
+    .FAQ .accordion-body {
+        padding-left: 3px;
+        padding-right: 3px;
     }
 
 }
